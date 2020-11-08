@@ -1,8 +1,9 @@
-package com.example.musicapp
+package com.example.musicapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.RequestManager
+import com.example.musicapp.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

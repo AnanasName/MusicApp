@@ -1,5 +1,6 @@
 package com.example.musicapp.data.remote
 
+import android.util.Log
 import com.example.musicapp.data.entities.Song
 import com.example.musicapp.other.Constants.SONG_COLLECTION
 import com.google.firebase.firestore.FirebaseFirestore
@@ -10,10 +11,10 @@ class MusicDatabase {
     private val firestore = FirebaseFirestore.getInstance()
     private val songCollection = firestore.collection(SONG_COLLECTION)
 
-    suspend fun getAllSongs(): List<Song>{
-        return try{
+    suspend fun getAllSongs(): List<Song> {
+        return try {
             songCollection.get().await().toObjects(Song::class.java)
-        }catch (e: Exception){
+        } catch(e: Exception) {
             emptyList()
         }
 
